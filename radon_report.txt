@@ -1,0 +1,4 @@
+hw2_debugging.py
+    ERROR: invalid syntax (<unknown>, line 16)
+rand.py
+    F 3:0 random_array - A

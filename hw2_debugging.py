@@ -1,5 +1,27 @@
 import rand
 
+def bubble_sort(arr):
+    n = len(arr)
+
+    # Traverse through all elements in the array
+    for i in range(n):
+        # Last i elements are already sorted
+        swapped = False
+        for j in range(0, n - i - 1):
+            # Compare adjacent elements
+            if arr[j] > arr[j + 1]:
+                # Swap if the element found is greater than the next element
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+                #this line is an issue
+
+        # If no two elements were swapped, the array is already sorted
+        if not swapped:
+            break
+
+    return arr
+
+
 def mergeSort(arr):
     if (len(arr) == 1):
         return arr
