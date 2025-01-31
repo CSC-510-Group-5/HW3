@@ -1,6 +1,14 @@
 """This module provides implementations of different sorting algorithms."""
 import rand
 
+def selectionSort(arr):
+    for i in range(len(arr)):
+        min_idx = i
+        for j in range(i + 1, len(arr)):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
 
 def bubble_sort(arr):
     n = len(arr)
@@ -22,11 +30,6 @@ def bubble_sort(arr):
             break
 
     return arr
-
-
-def mergeSort(arr):
-    if (len(arr) == 1):
-        return arr
 
 def insertion_sort(input_array):
     """

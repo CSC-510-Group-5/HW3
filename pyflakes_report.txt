@@ -1,0 +1,3 @@
+hw2_debugging.py:5:19: invalid syntax
+        min_idx =
+                  ^
