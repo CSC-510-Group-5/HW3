@@ -32,7 +32,6 @@ def merge_sort(input_array):
         return input_array
 
     half = len(input_array)//2
-
     return recombine(merge_sort(input_array[:half]), merge_sort(input_array[half:]))
 
 def recombine(left_array, right_array):
@@ -47,19 +46,17 @@ def recombine(left_array, right_array):
 
     left_index = 0
     right_index = 0
-    merge_array = [None] * (len(left_array) + len(right_array))
+    merge_array = []
     while left_index < len(left_array) and right_index < len(right_array):
         if left_array[left_index] < right_array[right_index]:
-            right_index += 1
-            merge_array[left_index + right_index] = left_array[left_index]
-        else:
+            merge_array.append(left_array[left_index])
             left_index += 1
-            merge_array[left_index + right_index] = right_array[right_index]
+        else:
+            merge_array.append(right_array[right_index])
+            right_index += 1
 
-    for i in range(right_index, len(right_array)):
-        merge_array[left_index + right_index] = right_array[i]
-    for i in range(left_index, len(left_array)):
-        merge_array[left_index + right_index] = left_array[i]
+    merge_array.extend(left_array[left_index:])
+    merge_array.extend(right_array[right_index:])
 
     return merge_array
 
