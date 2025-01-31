@@ -10,15 +10,15 @@ def test_merge_sort_sorted():
 def test_merge_sort_unsorted():
     assert merge_sort([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]) == [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
     
-def cablumsa_test1():
+def test_cablumsa1():
     arr1 = [1, 2, 3, 4, 5]
     assert merge_sort(arr1) == [1, 2, 3, 4, 5]
 
-def cablumsa_test2():
+def test_cablumsa2():
     arr2 = [5, 3, 4]
     assert merge_sort(arr2) == [3,4,5]
 
-def cablumsa_test3():
+def test_cablumsa3():
     arr3 = [2]
     assert merge_sort(arr3) == [2]
     
